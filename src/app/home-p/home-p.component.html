@@ -1,0 +1,19 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+  <div fxFlex *ngIf="productos">
+    <mat-grid-list cols="2" rowHeight="200px"> 
+  
+      <mat-grid-tile *ngFor="let product of productos">
+        
+        <img height="200px" src="{{product.images[0].image}}" alt={{product.name}}>
+        <mat-grid-tile-footer>
+          <h1 matLine> {{product.nombre | uppercase}} </h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    
+    </mat-grid-list>
+  </div>
+
+</div>
