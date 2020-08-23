@@ -20,5 +20,8 @@ export class ProductoService {
       return this.http.get<Producto[]>(baseURL + 'products/listaProductos/')
       .pipe(catchError(this.processHTTPMsgService.handleError));
     }
+    getProducto(id: number): Observable<Producto> {
+      return this.http.get<Producto>(baseURL + 'products/getProducto/'+ id + '/')
+    }
 
 }

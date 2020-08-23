@@ -1,0 +1,39 @@
+
+ <div class="container align-items-start"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around start"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+    <div fxFlex="40">
+      <div fxFlex *ngIf="producto">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>{{producto[0].nombre | uppercase}}</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{producto[0].images[0].image}}" alt={{producto.nombre}}>
+        <mat-card-content>
+          <p>Descripcion: {{producto[0].descripcion}}
+          </p>
+          <p>
+          Cantidades:
+          {{producto[0].cantidad}}
+          </p>
+          <p>
+          Precio:
+          {{producto[0].precio_unidad}}
+          </p>
+          <input type="number" placeholder="Cantidad seleccione" min="0" max="{{producto[0].cantidad}}">
+        </mat-card-content>
+        <mat-card-actions>
+           <button mat-button>
+           Agregar Producto 
+           </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+</div>

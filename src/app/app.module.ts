@@ -19,9 +19,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSliderModule } from '@angular/material/slider';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { baseURL } from './shared/baseurl';
 
-
+import { routes } from './app-routing/routes'
 
 import 'hammerjs'; 
 
@@ -31,14 +32,21 @@ import 'hammerjs';
 import { HomePComponent } from './home-p/home-p.component';
 import { ProductoService } from './services/producto.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePComponent
+    HomePComponent,
+    ProductDetailComponent,
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
